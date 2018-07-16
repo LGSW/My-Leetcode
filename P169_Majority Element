@@ -1,0 +1,17 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        sett = {}
+        for i in range(len(nums)):
+            if nums[i] not in sett:
+                sett[nums[i]] = 1
+            else:
+                sett[nums[i]] += 1
+            if sett[nums[i]] > (len(nums)/2):
+                return nums[i]
+
+x = Solution()
+print(x.majorityElement([2,2,1,1,1,2,2]))

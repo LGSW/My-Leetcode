@@ -1,0 +1,19 @@
+import math
+
+class Solution(object):
+    def poorPigs(self, buckets, minutesToDie, minutesToTest):
+        """
+        :type buckets: int
+        :type minutesToDie: int
+        :type minutesToTest: int
+        :rtype: int
+        """
+        times = minutesToTest //  minutesToDie
+        if times == 0 or buckets <= 1:
+            return 0
+        k = times + 1
+        return int(math.ceil(math.log(buckets, k)))
+
+x = Solution()
+print(x.poorPigs(1000, 15, 60))
+print(x.poorPigs(5, 15, 60))
